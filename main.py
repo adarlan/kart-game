@@ -8,9 +8,6 @@ pygame.display.set_caption("Kart Game")
 screen = pygame.display.set_mode((600, 800))
 clock = pygame.time.Clock()
 
-pygame.font.init()
-myfont = pygame.font.Font(pygame.font.get_default_font(), 24)
-
 class Kart:
 
     image = pygame.image.load("kart.png")
@@ -63,10 +60,7 @@ while running:
     screen.fill((150,206,180))
     screen.blit(kart.image, (kart.x, kart.y))
 
-    textsurface = myfont.render(("%.0f" % (kart.speed_rate * 100)) + "%", False, (0, 0, 0))
-    screen.blit(textsurface, (10, 10))
-
     pygame.display.update()
-    clock.tick(60) #frames/second
+    clock.tick(30) #frames/second
 
 joystick.close()
